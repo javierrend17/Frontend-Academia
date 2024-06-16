@@ -4,24 +4,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
-	<title>Document</title>
+	<title>Online Academy</title>
 </head>
 <body>
 	<div class="header">
-		<h1>Academia</h1>
+		<h1>Academy</h1>
 	</div>
 	<div class="views">
 		<div class="user-view view hide animate">
-			<h1>Test de Ingreso</h1>
-			<p>Por favor ingrese sus datos antes de continuar con el test.</p>
+			<h1>Admission Test</h1>
+			<p>Please enter your details before continuing with the test.</p>
 			<div class="user-form form">
 				<div class="nombre">
-					<p for="nombre">Nombre:</p>
+					<p for="nombre">First Name:</p>
 					<span class="hide animate"></span>
 				</div>
 				<input class="animate" type="text" id="nombre">
 				<div class="apellido">
-					<p for="Apellido">Apellido:</p>
+					<p for="Apellido">Last Name:</p>
 					<span class="hide animate"></span>
 				</div>
 				<input class="animate" type="text" id="apellidos">
@@ -31,7 +31,7 @@
 				</div>
 				<input class="animate" type="email" id="correo">
 				<button class="register menuButton animate">
-					<p class="animate">Continuar</p>
+					<p class="animate">Continue</p>
 					<div class="spinner animate hide">
 						<div class="a"></div>
 						<div class="b"></div>
@@ -40,35 +40,35 @@
 				</button>
 			</div>
 			<div class="errorMessage animate">
-				<p>Este correo ya está registrado, pongase en contacto con el administrador.</p>
+				<p>This email is already registered, please contact the administrator.</p>
 			</div>
 		</div>
 		<div class="test-view view animate">
 			<div class="test-padding">
-				<h1 class="title">Test de admisión</h1>
+				<h1 class="title">Admission Test</h1>
 				<div class="test-form">
-					<p class="sub-title">Lea detenidamente las indicaciones:</p>
-					<p class="instructions gap">A continuacion se le presentaran una serie de preguntas las cuales usted deberá leer detenidamente, marque la casilla con la respuesta correcta. Al final del formulario encontrará un boton para enviar sus resultados.</p>
-					<p class="sub-title">Nota:</p>
-					<p class="instructions">Este test no tiene limite de tiempo. Al finalizar se le enviaran sus resultados por correo electrónico.</p>
+					<p class="sub-title">Please read the instructions carefully:</p>
+					<p class="instructions gap">You will be presented with a series of questions that you should read carefully, and check the box with the correct answer. At the end of the form, you will find a button to submit your results.</p>
+					<p class="sub-title">Note:</p>
+					<p class="instructions">This test has no time limit. At the end, your results will be sent to your email.</p>
 				</div>
 				<div class="test-form test animate"></div>
 				<div class="sendButtonContainer">
 					<button class="send menuButton animate">
-						<p class="animate">Enviar</p>
+						<p class="animate">Submit</p>
 						<div class="spinner animate hide">
 							<div class="a"></div>
 							<div class="b"></div>
 							<div class="c"></div>
 						</div>
 					</button>
-					<span class="buttonMessage hide animate">Faltan preguntas por contestar<span>*</span></span>
+					<span class="buttonMessage hide animate">There are unanswered questions<span>*</span></span>
 				</div>
 
 				<div class="confirmationBg animate hide">
 					<div class="confirmationBox">
-						<p class="title">Form submited</p>
-						<p class="message">Sus respuestas se han subido, por favor revise su correo para ver su calificacion</p>
+						<p class="title">Form submitted</p>
+						<p class="message">Your answers have been uploaded, please check your email to see your grade</p>
 						<button class="restart menuButton">Go back</button>
 					</div>
 				</div>

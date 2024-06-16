@@ -118,42 +118,42 @@ const validateUser = () => {
 	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 	if (names.value.trim() === "") {
-    nameError('Campo requerido.')
+    nameError('Required field.')
 		return false
   }
 
 	if (names.value.length < 2 || names.value.length > 50) {
-		nameError('Nombre no admitido.')
+		nameError('Invalid name.')
 		return false
 	}
 
 	if (!namePattern.test(names.value)) {
-		nameError('Nombre no admitido.')
+		nameError('Invalid name.')
 		return false
 	}
 
 	if (lastname.value.trim() === "") {
-		lastnameError('Campo requerido.')
+		lastnameError('Required field.')
 		return false
 	}
 
 	if (lastname.value.length < 2 || names.value.length > 50) {
-		lastnameError('Apellido no admitido.')
+		lastnameError('Invalid last name.')
 		return false
 	}
 
 	if (!namePattern.test(lastname.value)) {
-		lastnameError('Apellido no admitido.')
+		lastnameError('Invalid last name.')
 		return false
 	}
 
 	if (email.value.trim() === "") {
-    emailError('Campo requerido.')
+    emailError('Required field.')
 		return false
   }
 
   if (!emailPattern.test(email.value)) {
-    emailError('Correo no valido.')
+    emailError('Invalid email.')
 		return false
   }
 
@@ -262,7 +262,7 @@ const registerEstudiante = async() => {
 			//Funcion para cambiar los estilos del boton de "Continuar"
 			hideSpinnerRegister()//(no borrar)
 			
-			throw new Error('Este correo ya está registrado.')
+			throw new Error('This email is already registered.')
 
 		}else{
 			const responseData = await response.json()
@@ -307,7 +307,7 @@ const getQuestions = async(data) => {
 		const response = await fetch(url, options)
 		
 		if (!response.ok) {
-			throw new Error('Hubo un problema obteniendo las preguntas del cuestionario.')
+			throw new Error('There was a problem getting the questionnaire questions.')
 		} else {
 			
 			const responseData = await response.json()
@@ -381,7 +381,7 @@ const sendAnswers = async(userAnswers) => {
 		const response = await fetch(url, options)
 
 		if (!response.ok) {
-			throw new Error("Ha habido un problema al enviar sus respuestas.")
+			throw new Error("There was a problem sending your answers.")
 			
 		}else{
 			const responseData = await response.json()
