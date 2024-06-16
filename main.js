@@ -239,7 +239,7 @@ userSendButton.addEventListener('click', (event) => {
 
 const registerEstudiante = async() => {
 	
-	const url = 'http://192.168.0.2:8000/api/v1/estudiantes/register'
+	const url = 'https://kodigo-academy.fly.dev/api/v1/estudiantes/register'
 
 	const data = {
 		nombres: `${names.value}`,
@@ -291,7 +291,7 @@ const registerEstudiante = async() => {
 
 const getQuestions = async(data) => {
 
-	const url = 'http://192.168.0.2:8000/api/v1/questions/get'
+	const url = 'https://kodigo-academy.fly.dev/api/v1/questions/get'
 
 	const options = {
 		method: 'POST',
@@ -361,7 +361,7 @@ const showQuestions = (questions) => {
 
 const sendAnswers = async(userAnswers) => {
 
-	url = 'http://192.168.0.2:8000/api/v1/answers/create'
+	url = 'https://kodigo-academy.fly.dev/api/v1/answers/create'
 
 	const data = {
 		user_id: id,
