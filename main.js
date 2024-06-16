@@ -35,6 +35,7 @@ const testFormDiv = document.querySelector('.test-form.test')
 
 //Cuadro de error
 const errorMessage = document.querySelector('.errorMessage')
+const errorText = document.querySelector('.errorMessage p')
 
 
 const nameError = (message) => {
@@ -66,6 +67,10 @@ const showErrorMessage = () => {
 
 const hideErrorMessage = () => {
 	errorMessage.classList.remove('showError')
+}
+
+const setErrorMessage = (message) => {
+	errorText.innerHTML = message
 }
 
 const hideSpinnerRegister = () => {
@@ -252,37 +257,31 @@ const registerEstudiante = async() => {
 			body: JSON.stringify(data)
 		}
 
-		// Realiza la petición
 		const response = await fetch(url, options)
 		
-
-		// Verifica si la respuesta es correcta
 		if (!response.ok) {
-
-			//Funcion para cambiar los estilos del boton de "Continuar"
-			hideSpinnerRegister()//(no borrar)
-			
-			throw new Error('This email is already registered.')
+			hideSpinnerRegister()
+			throw new Error('Already registered.')
 
 		}else{
 			const responseData = await response.json()
 
 			if (responseData.status) {
-
-				//Se llama a la funcion asincrona getQuestions
 				getQuestions(responseData.data)
-				
-				//Se cambian las vistas en el DOM
 				showTestForm()
-
-				//Funcion para cambiar los estilos del boton de "Continuar"
-				hideSpinnerRegister()//(no borrar)
+				hideSpinnerRegister()
 			}
 
 		}
 
 	} catch (error) {
-		console.error('Error:', error)
+		hideSpinnerRegister()
+		if(error.message === 'Failed to fetch'){
+			errorText.innerHTML = "Failed to connect to the server."
+		}else if (error.message === "Already registered.") {
+			errorText.innerHTML = "This email is already registered."
+		}
+
 		showErrorMessage()
 		setTimeout(() => {
 			hideErrorMessage()
@@ -385,12 +384,12 @@ const sendAnswers = async(userAnswers) => {
 			
 		}else{
 			const responseData = await response.json()
-			hideSpinnerSend()//(No borrar)
-			showConfirmationForm()//(No borrar)
+			hideSpinnerSend()
+			showConfirmationForm()
 		}
 
 	}catch(error){
 		console.log(error)
-		hideSpinnerSend()//(No borrar)
+		hideSpinnerSend()
 	}
 }
